@@ -1,0 +1,50 @@
+// import { MyTodo } from '../../../src/interfaces/todoInterface'
+// import fetch from 'node-fetch';
+
+// export interface MyTodo{
+//     _id: string;
+//     task: string;
+// }
+
+export interface Input{
+    renderBody?: Marko.Body;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-do App</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+        <script type="module" src="/js/script.js" defer></script>
+    </head>
+    <body>
+        <div class="page-content page-container" id="page-content">
+            <div class="padding">
+                <div class="row container d-flex justify-content-center">
+                    <div class="col-md-12">
+                        <div class="card px-3">
+                            <div class="card-body">
+                                <h4 class="card-title">My Todo List</h4>
+
+                                <form action="/newTodo" method="post">
+                                    <div class="add-items d-flex"> <input type="text" class="form-control todo-list-input" name="task" id="task" placeholder="What do you need to do today?"> <button type="submit" class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button> </div>
+                                </form>
+
+                                <div class="list-wrapper">
+                                    <ul class="d-flex flex-column-reverse todo-list">
+                                        <${input.renderBody}/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </body>
+</html>
+

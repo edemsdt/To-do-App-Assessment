@@ -1,0 +1,18 @@
+// import { MyTodo } from '../../../dist/interfaces/todoInterface'
+
+export interface MyTodo{
+    _id: string;
+    task: string;
+}
+
+export interface Input{
+  content: MyTodo[];
+}
+
+<todo-layout>
+  <for |todo| of=input.content>
+    <li key=todo._id>
+        <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> ${todo.task} <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline delete-icon" id=todo._id></i>
+    </li>
+  </for>
+</todo-layout>
